@@ -14,7 +14,9 @@ void CrashDetectionAlgorithm_GetCrashSeverity(unsigned char *){
 }
 
 void CrashDetectionAlgorithm_MainFunction(){
-  
-
-   
+    float accX, accY, accZ;
+    char *state;
+    
+    MPU6500Driver_GetAccelerationData(&accX, &accY, &accZ);
+    SystemStateManager_GetSystemState(&state);
 }
