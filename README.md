@@ -1,4 +1,4 @@
-# CarCrash
+
 # Car Crash Detection and Black Box Recording
 
 The aim of this project is to detect **car crashes** using an Arduino Mega board and different sensors, and to react accordingly to the event that happened: to sent the car's coordinates to the authorities, or, in our case, to a specific person via GSM. 
