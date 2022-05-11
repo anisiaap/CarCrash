@@ -1,14 +1,16 @@
-#include "MPU6050_light.h"
-#include"SystemStateManager.h"
+#include "MPU6500Driver.h"
+//#include"SystemStateManager.h"
 #include <stdio.h>
 
 MPU6050 mpu(Wire);
 
-unsigned long timer = 0;
+float accX, accY, accZ;
+float gyrX, gyrY, gyrZ;
+float angleX, angleY, angleZ;
+float accangleX, accangleY;
 
 void MPU6500Driver_Init()
 {
-
   Wire.begin();
 
   byte status = mpu.begin();
@@ -27,15 +29,13 @@ void MPU6500Driver_Init()
 
 boolean MPU6500Driver_GetAccelerationData(float *accX, float *accY, float *accZ)
 {
-
   mpu.update();
-
-  *accX = mpu.getAccX(); // update in loop
-  *accY = mpu.getAccY();
-  *accZ = mpu.getAccZ();
-
+  *accX = mpu.getAccX(); //-back    +front
+  *accY = mpu.getAccY(); //-right   +left
+  *accZ = mpu.getAccZ(); //-down    +up
   return true;
 }
+
 boolean MPU6500Driver_GetGyroData(float *gyrX, float *gyrY, float *gyrZ)
 {
   mpu.update();
@@ -62,22 +62,24 @@ boolean MPU6500Driver_GetAngularAccelerationData(float *accangleX, float *accang
   return true;
 }
 
+float return_accx()
+{
+  return accX;
+}
+
+float return_accy()
+{
+  return accY;
+}
+
 void MPU6500Driver_MainFunction()
 {
-
-  float accX, accY, accZ;
-  float gyrX, gyrY, gyrZ;
-  float angleX, angleY, angleZ;
-  float accangleX, accangleY;
-  char *state;
-  
-  SystemStateManager_GetSystemState(&state);
 
   MPU6500Driver_GetAccelerationData(&accX, &accY, &accZ);
   MPU6500Driver_GetGyroData(&gyrX, &gyrY, &gyrZ);
   MPU6500Driver_GetAngleData(&angleX, &angleY, &angleZ);
   MPU6500Driver_GetAngularAccelerationData(&accangleX, &accangleY);
-  /*
+
   Serial.print("ACC: ");
   Serial.print(accX);
   Serial.print(",");
@@ -101,5 +103,4 @@ void MPU6500Driver_MainFunction()
   Serial.print(",");
   Serial.println(accangleY);
   Serial.println();
-  */
 }
