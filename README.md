@@ -22,4 +22,4 @@ All your files and folders including the project architecture are presented in [
 
 # Status
 
-Currently the project is still ongoing. Changes are daily uploaded. For the moment, I am working on transsmiting the signal from the GPS, when a crash happend,  to a SIM card.
+Currently the project is still ongoing. Changes are daily uploaded. For the moment, I am working on transsmiting the signal from the GPS, when a crash happened,  to a SIM card.
