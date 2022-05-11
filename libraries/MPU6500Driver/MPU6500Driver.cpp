@@ -73,11 +73,11 @@ void MPU6500Driver_MainFunction()
   
   SystemStateManager_GetSystemState(&state);
 
-  /*MPU6500Driver_GetAccelerationData(&accX, &accY, &accZ);
+  MPU6500Driver_GetAccelerationData(&accX, &accY, &accZ);
   MPU6500Driver_GetGyroData(&gyrX, &gyrY, &gyrZ);
   MPU6500Driver_GetAngleData(&angleX, &angleY, &angleZ);
   MPU6500Driver_GetAngularAccelerationData(&accangleX, &accangleY);
-
+  /*
   Serial.print("ACC: ");
   Serial.print(accX);
   Serial.print(",");

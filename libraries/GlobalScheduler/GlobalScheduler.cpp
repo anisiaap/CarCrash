@@ -3,6 +3,7 @@
 #include <MPU6500Driver.h>
 #include <CrashDetectionAlgorithm.h>
 #include "CrashReactionManager.h"
+unsigned long int timerTK1 = 0, timerTK2 = 0, timerTK3 = 0;
 
 void TK_1()
 {
@@ -21,20 +22,17 @@ void TK_INIT()
 void TK_2()
 {
     //float *accX, float *accY, float *accZ;
-
     MPU6500Driver_MainFunction();
-
     CrashDetectionAlgorithm_MainFunction();
-
     CrashReactionManager_MainFunction();
 }
 
 void MainTaskScheduler(void)
 { // used in loop()
-
-    unsigned long int timerTK1 = 0, timerTK2 = 0, timerTK3 = 0;
+    
     if (micros() - timerTK2 > 500)
     {
+        
         TK_2();
         Serial.println("tk_2");
         timerTK2 = micros();
