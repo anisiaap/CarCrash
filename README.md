@@ -17,7 +17,7 @@ After that, all we need is to select the board: **"Arduino Mega or Arduino Mega 
 > **Note:** Don't forget to download from the Arduino IDE the MPU6050_light.h library and the Wire.h library.
 # Documentation
 
-All your files and folders including the project architecture are presented in [CarCrashDetection](https://github.com/anisiaap/CarCrash/tree/main/CarCrashDetection "CarCrashDetection"). The file needed to be compile in the Arduino is in [main](https://github.com/anisiaap/CarCrash/tree/main/main "main"), and the folders including the code itself are in [libraries](https://github.com/anisiaap/CarCrash/tree/main/libraries "libraries").
+All the files and folders including the project architecture are presented in [CarCrashDetection](https://github.com/anisiaap/CarCrash/tree/main/CarCrashDetection "CarCrashDetection"). The file needed to be compile in the Arduino is in [main](https://github.com/anisiaap/CarCrash/tree/main/main "main"), and the folders including the code itself are in [libraries](https://github.com/anisiaap/CarCrash/tree/main/libraries "libraries").
 
 
 # Status
