@@ -1,21 +1,29 @@
-#include <MPU6050_light.h>
-#include "CrashReactionManager.h"
-char *state;
-void SystemStateManager_init();
-
-void SystemStateManager_GetSystemState(char * state)
+#include "SystemStateManager.h"
+char *actual_state = (char *)malloc(1);
+void SystemStateManager_init()
 {
-  state = (char *)malloc(20 * sizeof(char));
-  
+  memcpy(actual_state, "0", 1);
+  // Serial.println(actual_state);
 }
-char return_state(char *state){
-  return &state;
+
+void SystemStateManager_GetSystemState(char *actual_state_p)
+{
+  memcpy(actual_state_p, actual_state, 1);
+  Serial.println(*actual_state_p);
+  if (strcmp(actual_state_p, "1") == 1)
+  {
+    Serial.println(*actual_state_p);
+    delay(5000);
+  }
 }
+
 void SystemStateManager_MainFunction()
 {
-  SystemStateManager_GetSystemState(&state);
-  // prove out complete
-  // gps
-  // gsm
-  // mpu
+  if (returnSTATUS() == 1)
+  {
+    memcpy(actual_state, "1", 1);
+  }
+  SystemStateManager_GetSystemState(actual_state);
+  memcpy(actual_state, "1", 0);
+  // Serial.println("da");
 }
