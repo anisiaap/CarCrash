@@ -1,5 +1,8 @@
 #include "SystemStateManager.h"
-char *actual_state = (char *)malloc(1);
+#include "MPU6500Driver.h"
+#include "CrashDetectionAlgorithm.h"
+
+char *actual_state = (char *)malloc(2);
 void SystemStateManager_init()
 {
     memcpy(actual_state, "0", 1);
@@ -19,11 +22,12 @@ void SystemStateManager_GetSystemState(char *actual_state_p)
 
 void SystemStateManager_MainFunction()
 {
-    if (returnSTATUS() == 1)
+    if (returnSTATUS() == 1) // is crash
     {
         memcpy(actual_state, "1", 1);
     }
     SystemStateManager_GetSystemState(actual_state);
-    memcpy(actual_state, "1", 0);
+    memcpy(actual_state, "0", 1);
+    setSTATUS();
     // Serial.println("da");
 }

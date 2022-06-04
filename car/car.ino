@@ -1,16 +1,18 @@
-#include <MPU6050_light.h>
+#include <SoftwareSerial.h>
+
+#include <Arduino.h>
 #include <GlobalScheduler.h>
-#include<MPU6500Driver.h>
-#define OUTPUT A0
+
+
 void setup() {
-  
   Serial.begin(9600);
+  pinMode(A0,OUTPUT);
   TK_INIT();
 }
 
-void loop() {
-  //Serial.print('hello');
-  
+void loop() 
+{
   MainTaskScheduler();
-
 }
+
+ 

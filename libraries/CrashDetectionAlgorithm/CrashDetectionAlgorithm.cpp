@@ -16,7 +16,6 @@ void CrashDetectionAlgorithm_Init()
 
 void CrashDetectionAlgorithm_MainFunction()
 {
-    ISCRASH = 0;
     unsigned long int k = 0;
     MPU6500Driver_GetAccelerationData(&accX_crash, &accY_crash, &accZ_crash);
     // Serial.println(accX_crash);
@@ -104,17 +103,29 @@ void CrashDetectionAlgorithm_MainFunction()
     }
 }
 
-void CrashDetectionAlgorithm_GetCrashType(unsigned char *crash_type_p)
+// void CrashDetectionAlgorithm_GetCrashType(unsigned char* crash_type_p)
+// {
+//     crash_type_p=crash_type;
+// }
+
+unsigned char *CrashDetectionAlgorithm_GetCrashType(unsigned char *crash_type_p)
 {
     crash_type_p = crash_type;
+    return crash_type_p;
 }
 
-void CrashDetectionAlgorithm_GetCrashSeverity(unsigned char *crash_severity_p)
+unsigned char *CrashDetectionAlgorithm_GetCrashSeverity(unsigned char *crash_severity_p)
 {
     crash_severity_p = crash_severity;
+    return crash_severity_p;
 }
 
 int returnSTATUS()
 {
     return ISCRASH;
+}
+
+void setSTATUS()
+{
+    ISCRASH = 0;
 }

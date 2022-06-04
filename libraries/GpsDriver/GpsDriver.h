@@ -1,15 +1,14 @@
 #pragma once
+#include <stdbool.h>
 
 void GpsDriver_Init();
 
-boolean GpsDriver_GetPosition(float* , float*);
+bool GpsDriver_GetPosition(float *, float *);
 
-boolean GpsDriver_GetDate(int*, char*, char*);
+bool GpsDriver_GetDate(int *, char *, char *);
 
-boolean GpsDriver_IsProveoutComplete();
+bool GpsDriver_IsProveoutComplete();
 
 void GpsDriver_MainFunction();
 
-boolean GpsDriver_GetTime(char*, char*, char*);
-
-
+bool GpsDriver_GetTime(char *, char *, char *);
