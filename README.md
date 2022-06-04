@@ -2,6 +2,11 @@
 # Car Crash Detection and Black Box Recording
 
 The aim of this project is to detect **car crashes** using an Arduino Mega board and different sensors, and to react accordingly to the event that happened: to send the car's coordinates to the authorities, or, in our case, to a specific person via GSM. 
+![IMG_5601 HEIC](https://user-images.githubusercontent.com/93073444/172023878-882a7ca6-d6a1-467b-9521-23acb3e971c7.jpg)
+![IMG_5600 HEIC](https://user-images.githubusercontent.com/93073444/172023885-5e2757f4-fe1f-481b-95c5-de4945789760.jpg)
+![IMG_5599 HEIC](https://user-images.githubusercontent.com/93073444/172023887-a7f89159-b896-45b3-80d6-1282405f3c8f.jpg)
+![IMG_5598 HEIC](https://user-images.githubusercontent.com/93073444/172023889-761f01a2-6ec4-44d7-8731-37ad512db197.jpg)
+![IMG_5602 HEIC](https://user-images.githubusercontent.com/93073444/172023905-25a17dc0-2767-4161-be40-4a710c50fd6e.jpg)
 
 
 # Technologies used
@@ -22,4 +27,4 @@ All the files and folders including the project architecture are presented in [C
 
 # Status
 
-Currently the project is still ongoing. Changes are daily uploaded. For the moment, I am working on transsmiting the signal from the GPS, when a crash happened,  to a SIM card.
+Currently the project is still ongoing. Changes are daily uploaded. For the moment, I am working on connecting to the GPS module.
